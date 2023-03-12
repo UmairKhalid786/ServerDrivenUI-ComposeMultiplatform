@@ -1,14 +1,14 @@
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
-import parsingSDK.Parser
+import com.techlads.sdu.parsingSDK.Parser
+import com.techlads.sdu.parsingSDK.widgets.*
+import com.techlads.sdu.parsingSDK.widgets.Widget
 import parsingSDK.widgets.*
 
 @Composable
 internal fun App() {
     MaterialTheme {
-        val widget = remember { horizontalList() }
-        Parser(widget)
+        Parser(horizontalList())
     }
 }
 
@@ -24,7 +24,7 @@ fun horizontalList(): Widget {
     })
 
     val text = Widget(constraints = hashMapOf<String, String>().apply {
-        put(TEXT, "HiHi")
+        put(TEXT, "Text")
         put(ID, "2")
         put(TYPE, "text")
         put(PADDING_BOTTOM, "5")
@@ -45,6 +45,3 @@ fun horizontalList(): Widget {
 
     return verticalList
 }
-
-
-expect fun getPlatformName(): String

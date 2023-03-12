@@ -1,4 +1,4 @@
-package parsingSDK
+package com.techlads.sdu.parsingSDK
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -11,11 +11,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
-import parsingSDK.models.WidgetType
+import com.techlads.sdu.parsingSDK.widgets.*
+import com.techlads.sdu.parsingSDK.models.WidgetType
 import parsingSDK.widgets.*
 
 @Composable
-fun Parser(widget: Widget, modifier: Modifier = Modifier) {
+internal fun Parser(widget: Widget, modifier: Modifier = Modifier) {
     when (widget.constraints.type()) {
         WidgetType.BUTTON -> {
             ParserButton(widget, modifier)
@@ -42,7 +43,7 @@ fun Parser(widget: Widget, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun ParserButton(widget: Widget, modifier: Modifier = Modifier) {
+internal fun ParserButton(widget: Widget, modifier: Modifier = Modifier) {
     val constraints = remember { widget.constraints }
     Button(onClick = {}, modifier = modifier.setGeneralProperties(widget.constraints)) {
         Text(constraints.text())
@@ -50,13 +51,13 @@ fun ParserButton(widget: Widget, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun ParserText(widget: Widget, modifier: Modifier = Modifier) {
+internal fun ParserText(widget: Widget, modifier: Modifier = Modifier) {
     val constraints = remember { widget.constraints }
     Text(constraints.text(), modifier.setGeneralProperties(widget.constraints))
 }
 
 @Composable
-fun HorizontalList(widget: MultiChildWidget, modifier: Modifier = Modifier) {
+internal fun HorizontalList(widget: MultiChildWidget, modifier: Modifier = Modifier) {
     val widgets = remember { widget.childWidget }
     LazyRow(modifier = modifier.setGeneralProperties(widget.constraints)) {
         items(widgets.size) {
@@ -66,7 +67,7 @@ fun HorizontalList(widget: MultiChildWidget, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun VerticalList(widget: MultiChildWidget, modifier: Modifier = Modifier) {
+internal fun VerticalList(widget: MultiChildWidget, modifier: Modifier = Modifier) {
     val widgets = remember { widget.childWidget }
     LazyColumn(modifier = modifier.setGeneralProperties(widget.constraints)) {
         items(widgets.size) {
@@ -76,7 +77,7 @@ fun VerticalList(widget: MultiChildWidget, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun VerticalScroll(widget: MultiChildWidget, modifier: Modifier = Modifier) {
+internal fun VerticalScroll(widget: MultiChildWidget, modifier: Modifier = Modifier) {
     val widgets = remember { widget.childWidget }
     Column(modifier = modifier.setGeneralProperties(widget.constraints)) {
         repeat(widget.childWidget.size) {
@@ -86,7 +87,7 @@ fun VerticalScroll(widget: MultiChildWidget, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun HorizontalScroll(widget: MultiChildWidget, modifier: Modifier = Modifier) {
+internal fun HorizontalScroll(widget: MultiChildWidget, modifier: Modifier = Modifier) {
     val widgets = remember { widget.childWidget }
     Row(modifier = modifier.setGeneralProperties(widget.constraints)) {
         repeat(widget.childWidget.size) {
@@ -95,7 +96,7 @@ fun HorizontalScroll(widget: MultiChildWidget, modifier: Modifier = Modifier) {
     }
 }
 
-fun Modifier.setGeneralProperties(constraints: Constraints): Modifier {
+internal fun Modifier.setGeneralProperties(constraints: Constraints): Modifier {
     constraints.id()?.let { testTag(it) }
     return padding(constraints.padding())
         .padding(constraints.margin())
