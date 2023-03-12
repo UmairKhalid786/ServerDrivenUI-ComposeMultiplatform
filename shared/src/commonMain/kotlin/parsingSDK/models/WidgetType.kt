@@ -1,4 +1,4 @@
-package parsingSDK.models
+package com.techlads.sdu.parsingSDK.models
 
 sealed class WidgetType {
     object EMPTY: WidgetType()
