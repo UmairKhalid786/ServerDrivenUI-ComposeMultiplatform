@@ -17,6 +17,12 @@ or use Gradle:
 
 `./gradlew installDebug` - install Android application on an Android device (on a real device or on an emulator)
 
+
+## Web 
+
+- Run command for testing on web `gradle jsBrowserRun`
+
+
 ## iOS
 
 Make sure you have set up your environment for mobile development with Kotlin Multiplatform. A detailed guide on how to set up your environment is available in the [Kotlin Multiplatform documentation](https://kotlinlang.org/docs/multiplatform-mobile-setup.html).
@@ -98,7 +104,3 @@ If you need to change this setting after you open the project in Android Studio,
 - open the project in Android Studio again
 
 For configuring advanced settings, you can use Xcode. Open the `iosApp/iosApp.xcworkspace` in Xcode after opening the project in Android Studio, and use Xcode to make your changes.
-
-### Web 
-
-- Run command for testing on web `gradle jsBrowserRun`
