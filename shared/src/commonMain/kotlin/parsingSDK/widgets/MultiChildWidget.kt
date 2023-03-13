@@ -1,6 +1,4 @@
-package com.techlads.sdu.parsingSDK.widgets
-
-import parsingSDK.widgets.Constraints
+package parsingSDK.widgets
 
 class MultiChildWidget(
     val childWidget: List<Widget>,

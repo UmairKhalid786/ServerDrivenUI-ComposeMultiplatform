@@ -1,8 +1,7 @@
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import com.techlads.sdu.parsingSDK.Parser
-import com.techlads.sdu.parsingSDK.widgets.*
-import com.techlads.sdu.parsingSDK.widgets.Widget
+import parsingSDK.Parser
+import parsingSDK.widgets.Widget
 import parsingSDK.widgets.*
 
 @Composable

@@ -1,4 +1,4 @@
-package com.techlads.sdu.parsingSDK
+package parsingSDK
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -11,8 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
-import com.techlads.sdu.parsingSDK.widgets.*
-import com.techlads.sdu.parsingSDK.models.WidgetType
+import parsingSDK.models.WidgetType
 import parsingSDK.widgets.*
 
 @Composable
