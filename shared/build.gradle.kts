@@ -26,9 +26,6 @@ kotlin {
         }
         binaries.executable()
     }
-//    js(IR) {
-//        browser()
-//    }
 
     cocoapods {
         summary = "Some description for the Shared Module"
