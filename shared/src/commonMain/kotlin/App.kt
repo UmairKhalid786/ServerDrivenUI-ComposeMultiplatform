@@ -1,7 +1,7 @@
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import parsingSDK.Parser
 import parsingSDK.widgets.Widget
+import parsingSDK.Parser
 import parsingSDK.widgets.*
 
 @Composable
@@ -20,6 +20,8 @@ fun horizontalList(): Widget {
         put(PADDING_TOP, "5")
         put(PADDING_LEFT, "5")
         put(PADDING_RIGHT, "5")
+        put(WIDTH, MATCH_PARENT.toString())
+        put(HEIGHT, MATCH_PARENT.toString())
     })
 
     val text = Widget(constraints = hashMapOf<String, String>().apply {
@@ -40,6 +42,8 @@ fun horizontalList(): Widget {
             put(PADDING_TOP, "5")
             put(PADDING_LEFT, "5")
             put(PADDING_RIGHT, "5")
+            put(WIDTH, MATCH_PARENT.toString())
+            put(HEIGHT, MATCH_PARENT.toString())
         })
 
     return verticalList

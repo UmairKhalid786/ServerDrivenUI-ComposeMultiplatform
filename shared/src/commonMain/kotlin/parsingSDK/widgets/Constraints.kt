@@ -7,8 +7,14 @@ import parsingSDK.models.WidgetType
 
 typealias Constraints = HashMap<String, String>
 
+const val MATCH_PARENT = -1
+const val WRAP_CONTENT = -2
+
 const val ID = "property_id"
 const val TYPE = "property_type"
+
+const val HEIGHT = "property_height"
+const val WIDTH = "property_width"
 
 const val PADDING_LEFT = "property_padding_left_text"
 const val PADDING_RIGHT = "property_padding_right_text"
@@ -55,5 +61,8 @@ fun Constraints.type(): WidgetType {
 }
 
 fun Constraints.text(): String = get(TEXT) ?: ""
+
+fun Constraints.height(): Int = get(HEIGHT)?.toIntOrNull() ?: WRAP_CONTENT
+fun Constraints.width(): Int = get(WIDTH)?.toIntOrNull() ?: WRAP_CONTENT
 
 
