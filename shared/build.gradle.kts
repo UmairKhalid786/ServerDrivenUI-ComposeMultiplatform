@@ -11,11 +11,24 @@ version = "1.0-SNAPSHOT"
 
 kotlin {
     android()
-
     jvm("desktop")
-
     ios()
     iosSimulatorArm64()
+    js(IR) {
+        browser {
+            testTask {
+                testLogging.showStandardStreams = true
+                useKarma {
+                    useChromeHeadless()
+                    useFirefox()
+                }
+            }
+        }
+        binaries.executable()
+    }
+//    js(IR) {
+//        browser()
+//    }
 
     cocoapods {
         summary = "Some description for the Shared Module"
@@ -53,6 +66,13 @@ kotlin {
         val desktopMain by getting {
             dependencies {
                 implementation(compose.desktop.common)
+            }
+        }
+
+        val jsMain by getting {
+            dependsOn(commonMain)
+            dependencies {
+                implementation(compose.web.core)
             }
         }
     }

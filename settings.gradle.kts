@@ -20,8 +20,9 @@ pluginManagement {
     }
 }
 
-rootProject.name = "My application"
+rootProject.name = "ServerDrivenUI"
 
 include(":androidApp")
 include(":shared")
 include(":desktopApp")
+include(":webApp")

@@ -98,3 +98,7 @@ If you need to change this setting after you open the project in Android Studio,
 - open the project in Android Studio again
 
 For configuring advanced settings, you can use Xcode. Open the `iosApp/iosApp.xcworkspace` in Xcode after opening the project in Android Studio, and use Xcode to make your changes.
+
+### Web 
+
+- Run command for testing on web `gradle jsBrowserRun`
