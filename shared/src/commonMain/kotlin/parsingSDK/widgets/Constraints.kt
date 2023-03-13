@@ -2,7 +2,7 @@ package parsingSDK.widgets
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.ui.unit.dp
-import com.techlads.sdu.parsingSDK.models.WidgetType
+import parsingSDK.models.WidgetType
 
 
 typealias Constraints = HashMap<String, String>
