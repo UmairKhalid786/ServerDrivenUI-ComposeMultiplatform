@@ -115,6 +115,6 @@ private fun Modifier.setWidth(constraints: Constraints): Modifier {
     return when (val width = constraints.width()) {
         WRAP_CONTENT -> this.wrapContentWidth()
         MATCH_PARENT -> this.fillMaxWidth()
-        else -> this.height(width.dp)
+        else -> this.width(width.dp)
     }
 }

@@ -7,11 +7,11 @@ import parsingSDK.widgets.*
 @Composable
 internal fun App() {
     MaterialTheme {
-        Parser(horizontalList())
+        Parser(testingHorizontalList())
     }
 }
 
-fun horizontalList(): Widget {
+fun testingHorizontalList(): Widget {
     val button = Widget(constraints = hashMapOf<String, String>().apply {
         put(TEXT, "Hello")
         put(ID, "1")
@@ -21,7 +21,7 @@ fun horizontalList(): Widget {
         put(PADDING_LEFT, "5")
         put(PADDING_RIGHT, "5")
         put(WIDTH, MATCH_PARENT.toString())
-        put(HEIGHT, MATCH_PARENT.toString())
+        put(HEIGHT, WRAP_CONTENT.toString())
     })
 
     val text = Widget(constraints = hashMapOf<String, String>().apply {
