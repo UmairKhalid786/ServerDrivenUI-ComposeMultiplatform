@@ -1,5 +1,3 @@
-package com.techlads.sdu.parsingSDK.widgets
-
-import parsingSDK.widgets.Constraints
+package parsingSDK.widgets
 
 open class Widget(open val constraints: Constraints)

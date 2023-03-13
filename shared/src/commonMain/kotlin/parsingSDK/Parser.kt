@@ -1,8 +1,6 @@
-package com.techlads.sdu.parsingSDK
+package parsingSDK
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.Button
@@ -11,8 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
-import com.techlads.sdu.parsingSDK.widgets.*
-import com.techlads.sdu.parsingSDK.models.WidgetType
+import androidx.compose.ui.unit.dp
+import parsingSDK.models.WidgetType
+import parsingSDK.widgets.MultiChildWidget
 import parsingSDK.widgets.*
 
 @Composable
@@ -100,4 +99,22 @@ internal fun Modifier.setGeneralProperties(constraints: Constraints): Modifier {
     constraints.id()?.let { testTag(it) }
     return padding(constraints.padding())
         .padding(constraints.margin())
+        .setHeight(constraints)
+        .setWidth(constraints)
+}
+
+private fun Modifier.setHeight(constraints: Constraints): Modifier {
+    return when (val height = constraints.height()) {
+        WRAP_CONTENT -> this.wrapContentHeight()
+        MATCH_PARENT -> this.fillMaxHeight()
+        else -> this.height(height.dp)
+    }
+}
+
+private fun Modifier.setWidth(constraints: Constraints): Modifier {
+    return when (val width = constraints.width()) {
+        WRAP_CONTENT -> this.wrapContentWidth()
+        MATCH_PARENT -> this.fillMaxWidth()
+        else -> this.height(width.dp)
+    }
 }
