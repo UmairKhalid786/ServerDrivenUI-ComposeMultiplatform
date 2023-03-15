@@ -1,5 +1,6 @@
 package parsingSDK
 
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -8,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import parsingSDK.models.WidgetType
@@ -97,7 +99,13 @@ internal fun HorizontalScroll(widget: MultiChildWidget, modifier: Modifier = Mod
 
 internal fun Modifier.setGeneralProperties(constraints: Constraints): Modifier {
     constraints.id()?.let { testTag(it) }
-    return padding(constraints.padding())
+
+    val props = constraints.shape()?.let {
+        clip(it)
+            .border(border = constraints.borderStroke(), shape = it)
+    } ?: this
+
+    return props.padding(constraints.padding())
         .padding(constraints.margin())
         .setHeight(constraints)
         .setWidth(constraints)
