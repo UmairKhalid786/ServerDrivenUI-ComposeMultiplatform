@@ -87,7 +87,7 @@ run configuration.
 
 After that you can open the project in Android Studio, and it will show the registered iOS device in the `iosApp` 
 run configuration.
-
+ 
 ### Configuring the iOS application
 
 This template contains a `iosApp/Configuration/Config.xcconfig` configuration file that allows you to configure most basic properties without having to move to Xcode. It contains:
