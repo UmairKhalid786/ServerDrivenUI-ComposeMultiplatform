@@ -10,7 +10,7 @@ This template contains  `desktopApp` run configuration that you can use to run t
 Useful Gradle tasks:
 - `./gradlew run` - run application
 - `./gradlew package` - package native distribution into `build/compose/binaries`
-
+ 
 ## Android
 To run on Android, use the `androidApp` run configuration in [Android Studio](https://developer.android.com/studio)
 or use Gradle:
