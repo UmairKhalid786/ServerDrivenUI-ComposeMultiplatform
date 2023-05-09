@@ -17,7 +17,6 @@ or use Gradle:
 
 `./gradlew installDebug` - install Android application on an Android device (on a real device or on an emulator)
 
-
 ## Web 
 
 - Run command for testing on web `gradle jsBrowserRun`
